@@ -1,0 +1,41 @@
+{
+  "configurations": [
+    {
+      "name": "C/C++: gcc build and debug active file",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceRoot}/build/gamma-controller",
+      "args": [
+        // "-d"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${workspaceRoot}",
+      "environment": [
+        {
+          "name": "WAYLAND_DEBUG",
+          "value": "client"
+        },
+        {
+          "name": "WLR_WL_OUTPUTS",
+          "value": "1"
+        }
+      ],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      "miDebuggerPath": "/usr/bin/gdb"
+    }
+  ],
+  "version": "2.0.0"
+}
